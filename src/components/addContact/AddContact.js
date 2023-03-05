@@ -1,6 +1,8 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import css from './addContact.module.css';
+
 class AddContacts extends Component {
   state = {
     name: '',
@@ -36,10 +38,11 @@ class AddContacts extends Component {
 
     return (
       <div>
-        <form onSubmit={this.onSubmitForm}>
-          <label>
+        <form onSubmit={this.onSubmitForm} className={css['add-form']}>
+          <label className={css['add-form__label']}>
             Name
             <input
+              className={css['add-form__input']}
               type="text"
               name="name"
               pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -50,9 +53,10 @@ class AddContacts extends Component {
             />
           </label>
 
-          <label>
+          <label className={css['add-form__label']}>
             Number
             <input
+              className={css['add-form__input']}
               type="tel"
               name="number"
               pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -63,7 +67,9 @@ class AddContacts extends Component {
             />
           </label>
 
-          <button type="submit">Add contact</button>
+          <button type="submit" className={css['add-form__btn']}>
+            Add contact
+          </button>
         </form>
       </div>
     );

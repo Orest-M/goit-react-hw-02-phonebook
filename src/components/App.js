@@ -66,7 +66,7 @@ export class App extends Component {
     const { contacts, filter } = this.state;
 
     return (
-      <div>
+      <div style={{ marginLeft: '20px' }}>
         <h2>Phonebook</h2>
         <AddContacts addItem={this.addItem} contacts={contacts} />
 
